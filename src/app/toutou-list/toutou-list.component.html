@@ -1,0 +1,35 @@
+<ul class="list">
+  <li class="border p-3" style="display: flex;align-items: center;">
+    <span>
+      <img src="../../assets/dog.png" alt="dog-picture" style="margin-right: .5rem;">
+      {{ dogName }}
+    </span>
+    <span style="display: flex;margin-left: auto;margin-left: auto;align-items: center;" id="task-name">
+      {{ taskName }}
+    </span>
+    <p id="completed">✔️</p>
+    <div style="display: flex;margin-left: auto;align-items: center;">
+      <input type="checkbox" name="checkbox" id="checkbox" style="margin-right: .5rem;" class="checkbox"
+        (change)="toggleCheckbox($event)">
+      <button type="button" class="btn btn-primary updateBtn" style="margin-right:.5rem;" data-bs-toggle="modal"
+        data-bs-target="#updateModal">
+        Modifier
+      </button>
+      <button class="btn btn-danger" (click)="deleteTask()">Supprimer</button>
+    </div>
+  </li>
+</ul>
+
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input type="text" [(ngModel)]="dogName">Nom du chien
+        <input type="text" [(ngModel)]="taskName">Titre de la tâche
+      </div>
+    </div>
+  </div>

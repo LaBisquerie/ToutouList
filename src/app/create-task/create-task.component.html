@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-end mb-5 mt-5">
+  <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createTaskModal">
+    Créer une tâche
+  </button>
+</div>
+
+<div class="modal fade" id="createTaskModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ajouter une tâche</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body d-flex" style="flex-wrap: wrap;">
+        <input type="text" [(ngModel)]="dogName" placeholder="Nom du chien"><br>
+        <input type="text" [(ngModel)]="taskName" placeholder="Titre de la tâche"><br>
+        <button class="btn btn-primary" (click)="addTask()" data-bs-dismiss="modal">Ajouter une tâche</button>
+      </div>
+    </div>
+  </div>
+</div>

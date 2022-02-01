@@ -1,0 +1,11 @@
+<div class="container mt-3">
+  <h1 class="text-center"> {{ title }}</h1>
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <app-create-task></app-create-task>
+    </div>
+    <div *ngFor="let toutou of toutous" class="col-10">
+      <app-toutou-list [taskId]="toutou.id" [taskName]="toutou.taskName" [dogName]="toutou.dogName"></app-toutou-list>
+    </div>
+  </div>
+</div>
